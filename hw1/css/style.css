@@ -1,0 +1,53 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    line-height: 2;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 8%;
+}
+
+nav {
+    padding: 3%;
+}
+
+main {
+    padding: 3%;
+}
+
+.fixed-top {
+    z-index: 1;
+}
+
+.active {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+main a{
+    color: #212529;
+}
+
+a:hover, a:focus {
+    border: 2px dashed #00838F;
+    color: #00838F !important; 
+}
+
+img {
+    width: 80%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 3%;
+}
+
+/*
+footer {
+    background-color: rgba(0, 0, 0, 0.05);
+}*/
