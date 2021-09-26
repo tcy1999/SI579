@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            #myBox {
+                width: 150px;
+                height: 150px;
+                background-color: blue;
+            }
+            #myBox.red {
+                background-color: red;
+            }
+        </style>
+        <script>
+            function changeColor() {
+                const mybox = document.getElementById('myBox');
+                mybox.classList.toggle('red');
+            }
+        </script>
+    </head>
+    <body>
+        <div id="myBox"></div>
+        <button onclick="changeColor()">Click to change the color of the box</button>
+    </body>
+</html> 
+
