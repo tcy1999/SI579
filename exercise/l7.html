@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+          #time-display {
+              font-size: 10em;
+          }
+      </style>
+    </head>
+    <body>
+        <main>
+            <output id="time-display">0</output>
+            <br>
+            <button id="start-button">Start</button>
+            <button id="stop-button" disabled>Stop</button>
+            <button id="reset-button" disabled>Reset</button>
+        </main>
+        <script>
+            let lastTime;
+            let timer;
+            let clock = 0;
+
+            function updateDisplay() {
+                const time = document.getElementById('time-display');
+                time.textContent = Math.round((clock/ 1000), 1000);
+            }
+            updateDisplay();
+
+            const startButton = document.getElementById('start-button');
+            startButton.addEventListener('click',  () => {
+                startButton.disabled = true;
+                stopButton.disabled = false;
+                resetButton.disabled = false;
+                lastTime = (new Date()).getTime();
+                timer = setInterval(() => {
+                    const currentTime = (new Date()).getTime();
+                    clock += currentTime - lastTime;
+                    updateDisplay();
+                    lastTime = currentTime;
+                }, 1000);
+            } );
+
+            const stopButton = document.getElementById('stop-button');
+            stopButton.addEventListener('click',  () => {
+                stopButton.disabled = true;
+                resetButton.disabled = false;
+                startButton.disabled = false;
+                clearInterval(timer);
+            } );
+
+            const resetButton = document.getElementById('reset-button');
+            resetButton.addEventListener('click',  () => {
+                stopButton.disabled = true;
+                resetButton.disabled = true;
+                startButton.disabled = false;
+                clock = 0;
+                updateDisplay();
+            } );
+        </script>
+    </body>
+</html>

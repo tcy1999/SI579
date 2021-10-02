@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style type="text/css">
+            main {
+                text-align: center;
+            }
+            #current_description {
+                width: 700px;
+                margin: auto;
+            }
+            #featured {
+                max-width: 700px;
+                margin: auto;
+            }
+            #thumbnails {
+                overflow: auto;
+                white-space: nowrap;
+            }
+            #thumbnails img {
+                height: 50px;
+                margin-left: 5px;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+
+            #thumbnails img.highlighted {
+                border: 1px solid red;
+            }
+        </style>
+        <script src="images.js" defer></script>
+        <script src="carousel.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div id="thumbnails"></div>
+            <figure>
+                <img id="featured" />
+                <figcaption id="current_description"></figcaption>
+            </figure>
+        </main>
+    </body>
+</html>
