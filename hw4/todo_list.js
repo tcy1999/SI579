@@ -15,8 +15,7 @@ function addTask(description, dueTime=false){
     doneBtn.textContent = 'Done';
     doneBtn.addEventListener('click', () => {
         taskElement.remove();
-    }
-    );
+    });
     taskElement.append(doneBtn);
     taskList.append(taskElement);
 }
