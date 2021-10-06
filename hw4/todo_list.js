@@ -2,11 +2,13 @@ function addTask(description, dueTime=false){
     const taskList = document.getElementById('task_list');
     const taskElement = document.createElement('li');
     
-    taskElement.innerHTML = description;
+    taskElement.textContent = description;
     if(dueTime) {
-        let date = new Date(dueTime);
-        taskElement.innerHTML += '<span class="due">due ' + date.toLocaleDateString() + ' ' 
-        + date.toLocaleTimeString() + '</span>';
+        const dueElement = document.createElement('span');
+        dueElement.setAttribute('class', 'due');
+        const date = new Date(dueTime);
+        dueElement.textContent = "due " + date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        taskElement.append(dueElement);
     }
 
     const doneBtn = document.createElement('button');
