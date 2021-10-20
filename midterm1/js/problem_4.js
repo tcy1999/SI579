@@ -4,7 +4,7 @@ const messageFeedback = document.querySelector('#problem-4 #message-feedback')
 const MAX_CHARACTERS = 50;
 
 // Write your code here
-messageInput.addEventListener('input', () => {
+function validateInput() {
     if(messageInput.value.length <= MAX_CHARACTERS) {
         messageInput.classList.add('is-valid');
         messageInput.classList.remove('is-invalid');
@@ -21,4 +21,7 @@ messageInput.addEventListener('input', () => {
         const n = messageInput.value.length - MAX_CHARACTERS;
         messageFeedback.textContent = n + ' character' + addS(n) + ' too long';
     }
-});
+}
+
+validateInput();
+messageInput.addEventListener('input', validateInput);
