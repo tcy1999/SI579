@@ -19,18 +19,14 @@ function addS(count){
 }
 
 const SAVED_COUNTER_KEY = 'saved_counter';
+const savedCounter = localStorage.getItem(SAVED_COUNTER_KEY);
 
 function onCounterChanged(counter) {
-    const stringifiedCounter = JSON.stringify(counter);
-    localStorage.setItem(SAVED_COUNTER_KEY, stringifiedCounter);
+    localStorage.setItem(SAVED_COUNTER_KEY, counter.toString());
 }
 
 export function Problem () {
-    const savedCounter = localStorage.getItem(SAVED_COUNTER_KEY);
-    let initialCounter = 0;
-    if(savedCounter){
-        initialCounter = JSON.parse(savedCounter);
-    }
+    const initialCounter = savedCounter? parseInt(savedCounter): 0;
 
     const[counter, setCounter] = useState(initialCounter);
     return <div className="btn-group">
